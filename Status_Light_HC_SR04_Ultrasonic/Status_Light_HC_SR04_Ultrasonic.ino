@@ -27,7 +27,7 @@ void setup() {
 }
 
 void loop() {
-  while (sensorOutputSmoothing < 10){
+  while (sensorOutputSmoothing < 5){
     digitalWrite(trigPin, LOW);
     delayMicroseconds(2);
     digitalWrite(trigPin, HIGH);
@@ -45,7 +45,7 @@ void loop() {
   //Serial.print("Distance: ");
   //Serial.println(smoothDistance);
 
-  if (smoothDistance/10 < TriggerDistance){
+  if (smoothDistance/5 < TriggerDistance){
     digitalWrite(relayTrigger, LOW);
     smoothDistance = 0;
     sensorOutputSmoothing = 0;
